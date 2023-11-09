@@ -1,0 +1,135 @@
+ *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 10px;
+     box-shadow: 0 7px 30px rgba(75, 70, 6, 0.3); 
+}
+.cover-img .cover-inner {
+    background: url(./img/work-tab.webp) no-repeat center/cover;
+     height: 190px; 
+     position: relative;
+  }
+
+   .cover-img h3 {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-transform: uppercase;
+    font-size: 40px;
+    color: #fff; 
+    font-weight: 700;
+  } 
+  .content{
+    padding: 10px 20px;
+  }
+
+  .content form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 0 10px 0 5px;
+    border-bottom: 1px solid #2e394a;
+    height: 35px;
+   
+  }
+  .content form > * {
+    background: transparent; 
+     border: none; 
+  }
+
+   .text-add {
+    font-weight: 700;
+    font-size: 20px;
+    outline: none;
+    color: #260aa4;
+  } 
+
+   .plus-icon {
+    display: block;
+    background: url(./img/blue-plus.jpeg
+    ) center center/contain no-repeat;
+    width: 30px;
+    height: 30px;
+  }
+   .content li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  } 
+   .content .checkbox {
+    display: none;
+  } 
+
+  .content .delete{
+     display: block; 
+    background: url(./img/cancel-vector-icon.jpg) center center/contain no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+
+
+  }
+
+   .content .checkbox + label {
+    color: #2e394a;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 5px 5px 40px;
+  } 
+    .content .checkbox + label:hover {
+    color: #fff;
+    background-color: #5490c7;
+  }  
+ .content .checkbox + label .check {
+    left: 4px;
+    top: 50%;
+    position: absolute;
+    transform: translatey(-50%);
+    width: 18px;
+    height: 18px;
+    display: block;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid rgb(10, 93, 126);
+  }
+  .content .checkbox:checked + label {
+    color: #2e394a;
+    text-decoration: line-through;
+  } *
+
+  .content .checkbox + label .check::after {
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    background: url(./img/icon-gal.jpeg) center center/cover no-repeat;
+     transform: scale(0); 
+  }
+   .content .checkbox:checked + label span.check::after {
+    transform: scale(1);
+  }   
+  
+
+
+
+  
+
+  
