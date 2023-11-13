@@ -5,6 +5,9 @@ const submitBtn = document.querySelector(".add-todo");
 const todoList = document.querySelector(".todos");
 const dayTitle = document.getElementById("dayName");
 
+document.addEventListener("DOMContentLoaded", () => {
+  loadTodos();
+});
 
 const lang = navigator.language;
 const date = new Date();
@@ -27,6 +30,7 @@ function addItem(event) {
 if(value) {
     createListItem(value, createdAt, todoList.childElementCount);
     input.value = '';
+    saveTodos();
 } else {
     console.log('please enter value')
 }
@@ -58,6 +62,28 @@ function createListItem(value, createdAt, index) {
     taskElement.remove();
   });
 }
+
+function saveTodos() {
+  const todos = Array.from(todoList.children).map((item) => {
+    const label = item.querySelector("label");
+    return {
+      value: label.textContent.split(" - ")[0],
+      createdAt: label.textContent.split(" - ")[1],
+    };
+  });
+
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function loadTodos() {
+  const storedTodos = localStorage.getItem("todos");
+  const todos = JSON.parse(storedTodos) || [];
+
+  todos.forEach((todo) => createListItem(todo.value, todo.createdAt));
+}
+
+
+
 
 
   
